@@ -1,0 +1,30 @@
+{% extends 'kirill/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Soft and Hard skills{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<div id="page" class="container">
+		<div class="column1">
+			<div class="title">
+				<h2>Softskills</h2>
+			</div>
+            {% for skill in sskils %}
+			<p>{{ skill.soft_skills }}</p>
+            {% endfor %}
+		</div>
+        <div class="column1">
+			<div class="title">
+				<h2>Hardskills</h2>
+			</div>
+            {% for hskill in hskils %}
+			<p>{{ hskill.hard_skills }}</p>
+            {% endfor %}
+		</div>
+</div>
+{% endblock %}
+</body>
+</html>

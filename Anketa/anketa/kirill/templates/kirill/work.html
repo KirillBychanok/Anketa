@@ -1,0 +1,26 @@
+{% extends 'kirill/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Work{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<div id="page" class="container">
+		<div class="column1">
+			<div class="title">
+				<h2>Works</h2>
+			</div>
+            {% for work in mwork %}
+			<p><strong>{{ work.place }}</strong></p>
+            <p>{{ work.position }}</p>
+            <p>{{ work.data_start }}</p>
+            <p>{{ work.data_finish }}</p>
+            <p>{{ work.tasks }}</p>
+            {% endfor %}
+		</div>
+</div>
+{% endblock %}
+</body>
+</html>

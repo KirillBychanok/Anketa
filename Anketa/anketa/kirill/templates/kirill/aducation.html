@@ -1,0 +1,26 @@
+{% extends 'kirill/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Education{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<div id="page" class="container">
+		<div class="column1">
+			<div class="title">
+				<h2>Education</h2>
+			</div>
+            {% for ed in educ %}
+			<p><strong>{{ ed.intitute }}</strong></p>
+            <p>{{ ed.position }}</p>
+            <p>{{ ed.data_start }}</p>
+            <p>{{ ed.data_finish }}</p>
+            <p>{{ ed.progress }}</p>
+            {% endfor %}
+		</div>
+</div>
+{% endblock %}
+</body>
+</html>

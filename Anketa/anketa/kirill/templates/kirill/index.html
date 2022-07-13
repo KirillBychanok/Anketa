@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{% block title %} Моя страница {% endblock %}</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="{% static 'default.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!--[if IE 6]>
+<link href="{% static 'default_ie6.css' %}" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<img src="{% static 'images/kod.png' %}" width="1200" height="600" alt="" />
+		</div>
+		<div id="menu" class="container">
+			<ul>
+				<li class="current_page_item"><a href="{% url 'index' %}" accesskey="1">Главная</a></li>
+				<li><a href="{% url 'soft_hard' %}" accesskey="1">Soft and Hard Skills</a></li>
+				<li><a href="{% url 'experience' %}" accesskey="2">Опыт работы</a></li>
+				<li><a href="{% url 'education' %}" accesskey="3">Образование</a></li>
+				<li><a href="{% url 'contacts' %}" accesskey="4">Контакты</a></li>
+			</ul>
+		</div>
+	</div>
+	{% block content %}
+	<div id="page" class="container">
+		<div class="column1">
+			<div class="title">
+				<h2>Немного обо мне</h2>
+			</div>
+			<p>Меня зовут Кирилл и я начинающий python-developer. Мне 32 года. Живу в городе Минске. Прошел курсы по
+			изучению языка Python и фреймворка Django. Много читаю и постоянно совершенствую свои знания, люблю
+			изучать все новое.Трудностей не боюсь)))</p>
+		</div>
+		<div class="column2">
+			<div class="title">
+				<h2>Работа</h2>
+			</div>
+			<img src="{% static 'images/firefighter.jpg' %}" width="282" height="150" alt="" />
+			<p>Работаю медиком-спасателем в МЧС Республики Беларусь</p>
+		</div>
+		<div class="column3">
+			<div class="title">
+				<h2>Отдых</h2>
+			</div>
+			<img src="{% static 'images/tennis.jpg' %}" width="282" height="150" alt="" />
+			<p>Увлекаюсь настольным теннисом, плаванием, футболом, бегом</p>
+		</div>
+		<div class="column4">
+			<div class="title">
+				<h2>Планы</h2>
+			</div>
+			<img src="{% static 'images/programming.png' %}" width="282" height="150" alt="" />
+			<p>Хочу развиться в самостоятельного и грамотного специалиста</p>
+		</div>
+	</div>
+	{% endblock %}
+	<div id="portfolio-wrapper">
+		<div id="portfolio" class="container">
+			<div class="title">
+				<h2>Немножко полезной информации</h2>
+				<span class="byline">Не проходите мимо, ознакомьтесь</span> </div>
+			<div class="column1">
+				<div class="box">
+					<img src="{% static 'images/python.png' %}" width="282" height="150" alt="" />
+					<h3>Документация по Python</h3>
+					<p>Можно узнать много полезной информации, лишним не будет</p>
+					<a href="{% url 'python' %}" class="button">Читать</a> </div>
+			</div>
+			<div class="column2">
+				<div class="box">
+					<img src="{% static 'images/django.png' %}" width="282" height="150" alt="" />
+					<h3>Документация по Django</h3>
+					<p>Практически весь необходимый объем знаний</p>
+					<a href="{% url 'django' %}" class="button">Читать</a> </div>
+			</div>
+			<div class="column3">
+				<div class="box">
+					<img src="{% static 'images/docker.png' %}" width="282" height="150" alt="" />
+					<h3>Документация по Docker</h3>
+					<p>Очень полезный инструмент для развертки приложения</p>
+					<a href="{% url 'docker' %}" class="button">Читать</a> </div>
+			</div>
+			<div class="column4">
+				<div class="box">
+					<img src="{% static 'images/redis.png' %}" width="282" height="150" alt="" />
+					<h3>Документация по Redis</h3>
+					<p>Ну и куда же без брокера сообщений и No SQL базы</p>
+					<a href="{% url 'redis' %}" class="button">Читать</a> </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<p>&copy; Агенство Кирилл и красота. Мы всегда с вами))</p>
+</div>
+</body>
+</html>
